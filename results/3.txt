@@ -1,0 +1,17 @@
+ServiceRequestResult
+Errors
+HotelsSearchResponse
+Result
+Address
+DefaultImage
+FullSize
+DisplayName
+GeoLocation
+Latitude
+Longitude
+HighestPackagePrice
+ID
+LowestPackagePrice
+StarRating
+SearchId
+SessionID
