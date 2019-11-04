@@ -1,7 +1,3 @@
-ServiceRequestResult
-Errors
-HotelsSearchResponse
-Result
 Address
 ChainCode
 DefaultImage
@@ -26,7 +22,6 @@ Rooms
 AdultsCount
 Availability
 Description
-Id
 KidsAges
 Price
 RoomBasis
@@ -39,5 +34,3 @@ SimplePrice
 SupplierId
 SupplierName
 StarRating
-SearchId
-SessionID

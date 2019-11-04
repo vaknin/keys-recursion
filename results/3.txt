@@ -1,7 +1,3 @@
-ServiceRequestResult
-Errors
-HotelsSearchResponse
-Result
 Address
 DefaultImage
 FullSize
@@ -13,5 +9,3 @@ HighestPackagePrice
 ID
 LowestPackagePrice
 StarRating
-SearchId
-SessionID

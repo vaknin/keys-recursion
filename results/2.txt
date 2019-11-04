@@ -1,7 +1,3 @@
-ServiceRequestResult
-Errors
-HotelsSearchResponse
-Result
 Address
 DefaultImage
 FullSize
@@ -15,11 +11,8 @@ Refundability
 Rooms
 AdultsCount
 Availability
-Id
 RoomBasis
 RoomClass
 RoomType
 SimplePrice
 StarRating
-SearchId
-SessionID

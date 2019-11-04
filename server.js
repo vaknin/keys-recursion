@@ -13,8 +13,8 @@ async function getDetailLevels(){
         let body = {
             "rqst": {
                 "Credentials": {
-                    "UserName": 'classified',
-                    "Password": "classified"
+                    "UserName": 'travo_qa@textemma.com',
+                    "Password": 'trav2014'
                 },
                 "Request": {
                     "__type": "HotelsServiceSearchRequest",
@@ -49,9 +49,14 @@ async function getDetailLevels(){
             body: JSON.stringify(body)
         }).catch(e => console.log(e));
     
+        // The http response
         let response = await request.json();
-        let results = response;
-        let keys = keyer(results).filter(key => isNaN(key));
+        response = response.ServiceRequestResult.HotelsSearchResponse.Result;
+
+        // Extract all keys
+        let keys = keyer(response, false).filter(key => isNaN(key));
+
+        // 
         let text = "";
         for (let key of keys){
             text += `${key}\n`;
@@ -64,30 +69,41 @@ async function getDetailLevels(){
 }
 
 // Returns an array of keys via recursion
-function keyer(object){
+function keyer(object, caseSensitive){
 
+    // The array of keys to return
     let keys = [];
 
-    for (let key of Object.keys(object)){
+    // Pushes a key to the array of keys, if it doesn't already exists
+    function push(key){
+    
+        // Key already exists in the array, return
+        if (keys.includes(key)) return;
 
-        // Get key's type
-        let type = typeof object[key];
-
-        // Add new key
-        if (type != "object"){
-            if (!keys.includes(key)) keys.push(key);
+        // Case sensitive
+        if (caseSensitive){
+            keys.push(key);
         }
 
-        // Key is an object
+        // Case insensitive
         else{
+            let lowercaseKeys = keys.map(k => k.toLowerCase());
+            if (!lowercaseKeys.includes(key.toLowerCase())) keys.push(key);
+        }
+    };
 
-            // Add the parent
-            if (!keys.includes(key)) keys.push(key);
+    // Loop through all keys of the object
+    for (let key of Object.keys(object)){
 
-            // Recursion
-            let subkeys = keyer(object[key]);
-            for (let key of subkeys){
-                if (!keys.includes(key)) keys.push(key);
+        // Push the key to the array
+        push(key);
+
+        // Key is an object - add its keys as well
+        if (typeof object[key] == "object"){
+
+            let subkeys = keyer(object[key], caseSensitive);
+            for (let subkey of subkeys){
+                push(subkey);
             }
         }
     }

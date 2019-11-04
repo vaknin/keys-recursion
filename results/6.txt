@@ -1,7 +1,3 @@
-ServiceRequestResult
-Errors
-HotelsSearchResponse
-Result
 Address
 DefaultImage
 FullSize
@@ -14,5 +10,3 @@ PackagesMeta
 Price
 SupplierName
 StarRating
-SearchId
-SessionID

@@ -1,7 +1,3 @@
-ServiceRequestResult
-Errors
-HotelsSearchResponse
-Result
 AvailableBoards
 HasFreeCancellationOption
 ID
@@ -20,7 +16,6 @@ Rooms
 AdultsCount
 Availability
 Description
-Id
 KidsAges
 Price
 RoomBasis
@@ -35,5 +30,3 @@ SupplierName
 PaymentType
 PropertyType
 RoomsKeywords
-SearchId
-SessionID
