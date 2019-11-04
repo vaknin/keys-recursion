@@ -13,8 +13,8 @@ async function getDetailLevels(){
         let body = {
             "rqst": {
                 "Credentials": {
-                    "UserName": 'travo_qa@textemma.com',
-                    "Password": 'trav2014'
+                    "UserName": 'username',
+                    "Password": 'password'
                 },
                 "Request": {
                     "__type": "HotelsServiceSearchRequest",
